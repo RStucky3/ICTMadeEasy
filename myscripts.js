@@ -44,31 +44,51 @@ function navToggle() {
 
 };
 
-function myFunction(event, dropDownName) {
-    //Pass in your dropdownName which is the dropdown  
-    var dropDownHandler = document.getElementById("#topNav");
-  
-    dropDownHandler.classList.toggle("1.0");
-    // Get the trigger element of the dropdown
-    var menuHandler = event.currentTarget;
-  
-    if (dropDownHandler.classList.contains("1.0")) {
-      //Attach only when the dropdown is active,
-      //to ensure onclick isn't called always
-      document.addEventListener("click", function(docEvent) {
-        documentHandler(docEvent, menuHandler)
-      });
-    } else {
-      dropDownHandler.classList.toggle("1.0");
-      // If is closed, remove the handler
-      document.removeEventListener("click", documentHandler);
-    }
-  
-    function documentHandler(event, menuHandler) {
-      if (menuHandler.contains(event.target)) {
-        dropDownHandler.classList.add("1.0");
-      } else {
-        dropDownHandler.classList.remove("1.0");
+
+
+
+$(function () {
+
+  // init the validator
+  // validator files are included in the download package
+  // otherwise download from http://1000hz.github.io/bootstrap-validator
+
+  $('#contact-form').validator();
+
+
+  // when the form is submitted
+  $('#contact-form').on('submit', function (e) {
+
+      // if the validator does not prevent form submit
+      if (!e.isDefaultPrevented()) {
+          var url = "contact.php";
+
+          // POST values in the background the the script URL
+          $.ajax({
+              type: "POST",
+              url: url,
+              data: $(this).serialize(),
+              success: function (data)
+              {
+                  // data = JSON object that contact.php returns
+
+                  // we recieve the type of the message: success x danger and apply it to the 
+                  var messageAlert = 'alert-' + data.type;
+                  var messageText = data.message;
+
+                  // let's compose Bootstrap alert box HTML
+                  var alertBox = '<div class="alert ' + messageAlert + ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + messageText + '</div>';
+                  
+                  // If we have messageAlert and messageText
+                  if (messageAlert && messageText) {
+                      // inject the alert to .messages div in our form
+                      $('#contact-form').find('.messages').html(alertBox);
+                      // empty the form
+                      $('#contact-form')[0].reset();
+                  }
+              }
+          });
+          return false;
       }
-    }
-  }
+  })
+});
