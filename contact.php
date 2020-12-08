@@ -1,60 +1,39 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
 
-$from = 'Demo contact form <demo@domain.com>';
 
-$sendTo = 'Demo contact form <rubenstucky@rubensvirtualhug.nl>';
+if(isset($_POST['name']) && ($_POST['surname']) && ($_POST['email']) && ($_POST['need']) && ($_POST['message'])){
 
-$subject = 'New message from contact form';
+    $name = $_POST['name'];
+    $surname = $_POST['surname'];
+    $mailfrom = $_POST['email'];
+    $message = $_POST['message'];
 
-$fields = array('name' => 'Name', 'surname' => 'Surname', 'phone' => 'Phone', 'email' => 'Email', 'message' => 'Message'); 
-
-$okMessage = 'Contact form successfully submitted. Thank you, I will get back to you soon!';
-
-$errorMessage = 'There was an error while submitting the form. Please try again later';
-
-error_reporting(E_ALL & ~E_NOTICE);
-
-try
-{
-
-    if(count($_POST) == 0) throw new \Exception('Form is empty');
-            
-    $emailText = "You have a new message from your contact form\n=============================\n";
-
-    foreach ($_POST as $key => $value) {
-        // If the field exists in the $fields array, include it in the email 
-        if (isset($fields[$key])) {
-            $emailText .= "$fields[$key]: $value\n";
-        }
-    }
-
-    // All the neccessary headers for the email.
-    $headers = array('Content-Type: text/plain; charset="UTF-8";',
-        'From: ' . $from,
-        'Reply-To: ' . $from,
-        'Return-Path: ' . $from,
-    );
+    require_once "PHPMailer/PHPMailer.php";
+    require_once "PHPMailer/SMTP.php";
+    require_once "PHPMailer/Exception.php";
     
-    // Send email
-    mail($sendTo, $subject, $emailText, implode("\n", $headers));
+    $mail->isSMTP();
+    $mail->Host = "smtp.office365.com";
+    $mail->SMTPAuth-> true;
+    $mail->Username = "rubenstucky@ictmadeeasy.nl";
+    $mail->Password = 'Kaasisbaas!';
+    $mail->Port = 587; 
+    $mail->SMTPSecure = "ssl";
 
-    $responseArray = array('type' => 'success', 'message' => $okMessage);
-}
-catch (\Exception $e)
-{
-    $responseArray = array('type' => 'danger', 'message' => $errorMessage);
-}
+    $mail->isHTML(true);
+    $mail->setFrom($mailfrom, $name);
+    $mail->addAddress("rubenstucky@ictmadeeasy.nl");
+    $mail->Subject = ("Mail van: $name, over: werk");
+    $mail->Body = $message;
 
-
-// if requested by AJAX request return JSON response
-if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
-    $encoded = json_encode($responseArray);
-
-    header('Content-Type: application/json');
-
-    echo $encoded;
-}
-// else just display the message
-else {
-    echo $responseArray['message'];
+    if($mail->send()){
+        $status = "success";
+        $response = "Email is sent!";
+    }
+    else{
+        $status = "failed";
+        $response = "failed";
+    }
+    exit(json_encode(array("status" => $status, "response" => $response)));
 }

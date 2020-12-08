@@ -1,3 +1,6 @@
+html{
+  overflow: scroll;
+}
 .bovenbalk{
     background-color:whitesmoke;
     border-bottom: gray;
@@ -94,7 +97,7 @@ body {
 
 .navigation {
     width: 120px;
-    position: fixed;
+    position: absolute;
     z-index: 1;
     top: 0;
     left: 0;
@@ -222,5 +225,6 @@ body {
   margin-left: 50px;
   margin-right: 50px;
   margin-top: -30px;
+  
 }
 
