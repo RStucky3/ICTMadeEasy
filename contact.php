@@ -1,8 +1,8 @@
 <?php
-use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer;
 
 
-if(isset($_POST['name']) && ($_POST['surname']) && ($_POST['email']) && ($_POST['need']) && ($_POST['message'])){
+if(isset($_POST['name']) && ($_POST['surname']) && ($_POST['email']) && ($_POST['message'])){
 
     $name = $_POST['name'];
     $surname = $_POST['surname'];

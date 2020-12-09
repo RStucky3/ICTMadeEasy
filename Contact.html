@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <link rel ="icon" href ="Fotos/logo_small_icon_only.png" type ="image/x-icon"> <!-- Icon van de webpagina-->
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -62,15 +63,17 @@
         <div class="row">
           <div class="col-sm">
             <h2>Call us</h2>
-            <p>0612345678</p>
+            <a href="tel:+31622987076">0622987076</a>
           </div>
           <div class="col-sm">
             <h2>Send us a message</h2>
             <p>Fill in the form below</p>
           </div>
-          <div class="col-sm">
+          <div class="col-sm" id="mailto">
             <h2>Mail us</h2>
+            <a href="mailto:info@ictmadeeasy.nl">
             <p>info@ictmadeeasy.nl</p>
+            </a>
           </div>
         </div>
         <hr>
@@ -152,7 +155,7 @@
         var mailfrom = $("#email");
         var message = $("#message");
 
-        if(isNotEmpty(name)&&isNotEmpty(surname)&&isNotEmpty(mailfrom)&&isNotEmpty(need)&&isNotEmpty(message)){
+        if(isNotEmpty(name)&&isNotEmpty(surname)&&isNotEmpty(mailfrom)&&isNotEmpty(message)){
           $.ajax({
             url: 'contact.php',
             method: 'post',

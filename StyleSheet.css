@@ -228,3 +228,40 @@ body {
   
 }
 
+a {
+  color: black;
+}
+a:visited {
+  color: black;
+}
+
+
+#p1, #p2, #p3{
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 50px;
+}
+
+
+
+.p1a, .p2a, .p3a{
+background-color: #EAD017;
+padding-bottom: 100px;
+border-top-left-radius: 25px;
+border-top-right-radius: 25px;
+border-top: solid;
+border-right: solid;
+border-left: solid;
+}
+
+.p1b, .p2b, .p3b{
+background-color: #EDEDED;
+border-bottom-left-radius: 25px;
+border-bottom-right-radius: 25px;
+margin-top: -10px;
+padding-bottom: 100px;
+border-bottom: solid;
+border-right: solid;
+border-left: solid;
+}
+
