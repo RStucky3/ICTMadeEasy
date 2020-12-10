@@ -236,32 +236,101 @@ a:visited {
 }
 
 
-#p1, #p2, #p3{
-  margin-left: 50px;
-  margin-right: 50px;
+#p1{
   margin-bottom: 50px;
 }
 
 
 
-.p1a, .p2a, .p3a{
+.p2a{
 background-color: #EAD017;
 padding-bottom: 100px;
 border-top-left-radius: 25px;
 border-top-right-radius: 25px;
 border-top: solid;
+border-top-width: 1px;
 border-right: solid;
+border-right-width: 1px;
 border-left: solid;
+border-left-width: 1px;
 }
 
-.p1b, .p2b, .p3b{
+.p2b{
 background-color: #EDEDED;
 border-bottom-left-radius: 25px;
 border-bottom-right-radius: 25px;
+border-width: 1px;
 margin-top: -10px;
 padding-bottom: 100px;
 border-bottom: solid;
+border-bottom-width: 1px;
 border-right: solid;
+border-right-width: 1px;
 border-left: solid;
+border-left-width: 1px;
+
 }
 
+
+
+.pricing-table {
+  padding-bottom: 30px;
+}
+
+.pricing-header {
+  position: relative;
+  padding: 22px 22px;
+  margin-bottom: -140px;
+  text-align: center;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+}
+.pricing-title {
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 24px;
+  text-align: center;
+  font-weight: 700;
+}
+.pricing-rate {
+  font-size: 70px;
+  font-weight: 700;
+  color: black;
+  position: relative;
+  text-align: center;
+}
+.pricing-rate sup {
+  font-size: 24px;
+  position: relative;
+  top: -30px;
+  color: black;
+}
+.pricing-rate span {
+  font-size: 16px;
+  color: black;
+  text-transform: uppercase;
+}
+.pricing-list {
+  padding: 20px 0 40px 0;
+  margin-bottom: -140px;
+}
+.pricing-list ul {
+  padding: 0px;
+  display: table;
+  margin: 0px auto;
+}
+.pricing-list ul li {
+  list-style: none;
+  border-bottom: 1px dotted gray;
+  color: black;
+  font-size: 16px;
+  line-height: 42px;
+}
+.pricing-list ul li:last-child {
+  border: none;
+}
+
+.pricing-list ul li span {
+  color: #34495e;
+}
