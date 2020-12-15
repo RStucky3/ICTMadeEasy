@@ -59,20 +59,20 @@
       <br>
 
       <div class="Contact">
-        <h1>Contact us</h1>
+        <h1>Contacteer ons</h1>
         <br>
         <hr \>
         <div class="row">
           <div class="col-sm">
-            <h2>Call us</h2>
+            <h2>Bel ons</h2>
             <a href="tel:+31622987076"><i class="fas fa-phone-alt"></i> 0622987076</a>
           </div>
           <div class="col-sm">
-            <h2>Send us a message</h2>
-            <p><i class="far fa-comment-dots"></i> Fill in the form below</p>
+            <h2>Stuur ons een bericht</h2>
+            <p><i class="far fa-comment-dots"></i> Vul het formulier hier beneden in</p>
           </div>
           <div class="col-sm" id="mailto">
-            <h2>Mail us</h2>
+            <h2>Mail ons</h2>
             <a href="mailto:info@ictmadeeasy.nl">
             <p><i class="fas fa-envelope-open-text"></i> info@ictmadeeasy.nl</p>
             </a>
@@ -85,9 +85,9 @@
       <div class="alert-success">
         <span>Bericht verzonden! Dankuwel.</span>
         </div>
-        <div class="alert-error">
+       <!-- <div class="alert-error">
           <span>Er is iets fout gegaan, probeer het opnieuw.</span>
-          </div>
+          </div>-->
       <div class="Contact-form">
         <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"      
         onload="if(submitted) {document.getElementById("myForm").reset()}"></iframe> 
@@ -101,14 +101,14 @@
               <div class="row">
                   <div class="col-md-6">
                       <div class="form-group">
-                          <label for="form_name">Firstname *</label>
+                          <label for="form_name">Voornaam *</label>
                           <input type="text" name="entry.386547853" id="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
                           <div class="help-block with-errors"></div>
                       </div>
                   </div>
                   <div class="col-md-6">
                       <div class="form-group">
-                          <label for="form_lastname">Lastname *</label>
+                          <label for="form_lastname">Achternaam *</label>
                           <input type="text" name="entry.321799088" id="surname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
                           <div class="help-block with-errors"></div>
                       </div>
@@ -124,13 +124,13 @@
                   </div>
                   <div class="col-md-6">
                       <div class="form-group">
-                          <label for="form_need">Please specify your need *</label>
+                          <label for="form_need">Waar is uw verzoek voor? *</label>
                           <select name="entry.446877871" class="form-control" id="need" required="required" data-error="Please specify your need.">
                               <option value=""></option>
-                              <option value="Request quotation">-</option>
-                              <option value="Request order status">-</option>
-                              <option value="Request copy of an invoice">-</option>
-                              <option value="Other">Other</option>
+                              <option value="Vraag">Een vraag</option>
+                              <option value="Verzoek">Een verzoek</option>
+                              <option value="Offerte">Een offerte</option>
+                              <option value="Other">Iets anders</option>
                           </select>
                           <div class="help-block with-errors"></div>
                       </div>
@@ -139,7 +139,7 @@
               <div class="row">
                   <div class="col-md-12">
                       <div class="form-group">
-                          <label for="form_message">Message *</label>
+                          <label for="form_message">Bericht *</label>
                           <textarea name="entry.1774642889" class="form-control" id="message" placeholder="Message for me *" rows="4" required="required" data-error="Please, leave us a message."></textarea>
                           <div class="help-block with-errors"></div>
                       </div>
@@ -151,7 +151,7 @@
               <div class="row">
                   <div class="col-md-12">
                       <p class="text-muted">
-                          <strong>*</strong> These fields are required. 
+                          <strong>*</strong> Deze vakken zijn verplicht. 
                   </div>
               </div>
           </div>

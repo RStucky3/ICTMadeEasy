@@ -98,19 +98,22 @@ function validateNeed() {
 function validateForm() {
   if (!validateName() || !validateSurname() || !validateEmail() || !validateNeed() || !validateMessage()) {
 
-	document.querySelector(".alert-error").style.display = "block";
-	setTimeout(deleteError, 3000)
+	//document.querySelector(".alert-error").style.display = "block";
+	//setTimeout(deleteError, 1000)
   }
   else {
 	document.querySelector(".alert-success").style.display = "block";
-	setTimeout(deleteError, 3000)
+	setTimeout(deleteForm, 3000)
   }
 }
 
 function deleteError(){
-	document.querySelector(".alert-success").style.display = "none";
 	document.querySelector(".alert-error").style.display = "none";
+}
+
+function deleteForm(){
 	document.getElementById("myForm").reset();
+	document.querySelector(".alert-success").style.display = "none";
 }
 
           

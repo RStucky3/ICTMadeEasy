@@ -351,7 +351,7 @@ border-left-width: 1px;
   top: 10px;
   border-left: 8px solid #3AD66E;
   border-radius: 4px;
-  display: none;
+  opacity:0.0;
 }
 
 .alert-error{
@@ -365,5 +365,5 @@ border-left-width: 1px;
   top: 10px;
   border-left: 8px solid #FFA502;
   border-radius: 4px;
-  display: none;
+  opacity:0.0;
 }
