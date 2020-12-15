@@ -102,7 +102,7 @@ function validateForm() {
 	//setTimeout(deleteError, 1000)
   }
   else {
-	document.querySelector(".alert-success").style.display = "block";
+
 	setTimeout(deleteForm, 3000)
   }
 }
@@ -113,7 +113,8 @@ function deleteError(){
 
 function deleteForm(){
 	document.getElementById("myForm").reset();
-	document.querySelector(".alert-success").style.display = "none";
+	window.location.href = "http://ictmadeeasy.nl/Thankyou.html";
+	//document.querySelector(".alert-success").style.display = "none";
 }
 
           

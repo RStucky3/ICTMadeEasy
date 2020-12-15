@@ -233,6 +233,14 @@ body {
   
 }
 
+@media only screen and (max-width: 700px){
+  .Contact-form{
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+}
+
 a {
   color: black;
 }
@@ -351,7 +359,7 @@ border-left-width: 1px;
   top: 10px;
   border-left: 8px solid #3AD66E;
   border-radius: 4px;
-  opacity:0.0;
+  display: none;
 }
 
 .alert-error{
@@ -365,5 +373,5 @@ border-left-width: 1px;
   top: 10px;
   border-left: 8px solid #FFA502;
   border-radius: 4px;
-  opacity:0.0;
+  display: none;
 }
