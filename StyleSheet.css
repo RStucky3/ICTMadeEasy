@@ -46,6 +46,8 @@ html{
 }
 */
   
+
+
   .button {
     border-radius: 4px;
     background-color: #EAD017;
@@ -91,9 +93,11 @@ html{
 
 body {
     font-family: "Lato", sans-serif;
-  overflow:hidden;
+    overflow:hidden;
     transition: background-color .5s;
 }
+
+
 
 .navigation {
     width: 120px;
@@ -104,7 +108,7 @@ body {
     background-color: whitesmoke;
 
     overflow: hidden;
-    transition: all .4s ease-in-out;
+    /*transition: all .4s ease-in-out;*/
     padding-top: 0px;
 }
 
@@ -171,7 +175,7 @@ body {
     position:relative;	
     color: black;
     opacity:0.0;
-    transition: all .5s ease-in-out;
+   /* transition: all .5s ease-in-out;*/
 }
 
 .menuitems:after {
@@ -215,6 +219,7 @@ body {
   padding-top: 50px;
   padding-bottom: 50px;
 }
+
 
 .Contact-form{
   background-color: white;
@@ -333,4 +338,32 @@ border-left-width: 1px;
 
 .pricing-list ul li span {
   color: #34495e;
+}
+
+.alert-success{
+  z-index: 1;
+  background: #D4EDDa;
+  font-size: 18px;
+  padding: 20px 40px;
+  min-width: 420px;
+  position: fixed;
+  right: 0;
+  top: 10px;
+  border-left: 8px solid #3AD66E;
+  border-radius: 4px;
+  display: none;
+}
+
+.alert-error{
+  z-index: 1;
+  background: #FFF3CD;
+  font-size: 18px;
+  padding: 20px 40px;
+  min-width: 420px;
+  position: fixed;
+  right: 0;
+  top: 10px;
+  border-left: 8px solid #FFA502;
+  border-radius: 4px;
+  display: none;
 }

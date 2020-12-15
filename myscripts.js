@@ -44,51 +44,73 @@ function navToggle() {
 
 };
 
+function validateName() {
+	var name = document.getElementById('name').value;
+	if(name.length == 0) {
+	  return false;
+
+	}
+	//if (!name.match(/^[a-zA-Z]{3,}(?: [a-zA-Z]+){0,2}$/)) {
+	 // alert("Please enter your correct name") ;//Validation Message
+	 // return false;
+//	}
+	return true;
+  }
+
+  function validateSurname() {
+	var surname = document.getElementById('surname').value;
+	if(surname.length == 0) {
+	  return false;
+	}
+   	return true;
+ }
+
+ function validateEmail () {
+
+  var email = document.getElementById('email').value;
+  if(email.length == 0) {
+	return false;
+
+  }
+  return true;
+
+}
+
+function validateNeed() {
+	var need = document.getElementById('need').value;
+	if(need.length == 0) {
+	  return false;
+	}
+
+   	return true;
+ }
+
+ function validateMessage() {
+	var message = document.getElementById('message').value;
+	if(message.length == 0) {
+	  return false;
+	}
+	
+   	return true;
+ }
 
 
+function validateForm() {
+  if (!validateName() || !validateSurname() || !validateEmail() || !validateNeed() || !validateMessage()) {
 
-$(function () {
+	document.querySelector(".alert-error").style.display = "block";
+	setTimeout(deleteError, 3000)
+  }
+  else {
+	document.querySelector(".alert-success").style.display = "block";
+	setTimeout(deleteError, 3000)
+  }
+}
 
-  // init the validator
-  // validator files are included in the download package
-  // otherwise download from http://1000hz.github.io/bootstrap-validator
+function deleteError(){
+	document.querySelector(".alert-success").style.display = "none";
+	document.querySelector(".alert-error").style.display = "none";
+	document.getElementById("myForm").reset();
+}
 
-  $('#contact-form').validator();
-
-
-  // when the form is submitted
-  $('#contact-form').on('submit', function (e) {
-
-      // if the validator does not prevent form submit
-      if (!e.isDefaultPrevented()) {
-          var url = "contact.php";
-
-          // POST values in the background the the script URL
-          $.ajax({
-              type: "POST",
-              url: url,
-              data: $(this).serialize(),
-              success: function (data)
-              {
-                  // data = JSON object that contact.php returns
-
-                  // we recieve the type of the message: success x danger and apply it to the 
-                  var messageAlert = 'alert-' + data.type;
-                  var messageText = data.message;
-
-                  // let's compose Bootstrap alert box HTML
-                  var alertBox = '<div class="alert ' + messageAlert + ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + messageText + '</div>';
-                  
-                  // If we have messageAlert and messageText
-                  if (messageAlert && messageText) {
-                      // inject the alert to .messages div in our form
-                      $('#contact-form').find('.messages').html(alertBox);
-                      // empty the form
-                      $('#contact-form')[0].reset();
-                  }
-              }
-          });
-          return false;
-      }
-  })
-});
+          
