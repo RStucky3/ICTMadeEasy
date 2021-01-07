@@ -400,3 +400,46 @@ border-left-width: 1px;
   -o-background-size: cover;
   background-size: cover;
 }
+/*
+.footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #FFFACD;
+  color: black;
+  text-align: center;
+  background-color:whitesmoke;
+  border-top: gray;
+  border-top-style: inset;
+  padding-top: 10px;
+}
+*/
+
+#idid{
+  border-style: dotted;
+  border-color: black;
+}
+
+footer {
+  width: 100%;
+  display: inline-block;
+  height: 70px;
+  background-color: #999;
+  margin-bottom: 0px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  
+}
+
+  footer p {
+    padding-left: 10%;
+    color: white;
+    font-size: 0.7em;
+    line-height: 70px;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+
+  }
