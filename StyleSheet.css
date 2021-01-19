@@ -18,6 +18,11 @@ html{
     margin-top: 20px;
 }
 
+.test{
+  border-style:solid;
+  border-color: white;
+  border-width: 1px;
+}
 
 /*
 .boxa{
@@ -258,6 +263,17 @@ a:visited {
   color: black;
 }
 
+.homepage {
+  background-image: url("Fotos/about.jpg");
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  color:white;
+}
+
+
 
 #p1{
   margin-bottom: 50px;
@@ -451,3 +467,53 @@ footer {
 
   }
     
+.moreinfo{
+    justify-content: center;
+}
+.textknop{
+  display: inline-block;
+  background-color: white;
+  padding: 16px 60px;
+  text-align: center;
+  border: 2px solid ;
+  color:black;
+  border-color: white;
+}
+
+  .knop {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    margin-left: -5px;
+  }
+
+  .knop1 {
+    background-color: #EAD017; 
+    color: #EAD017; 
+    border: 2px solid ;
+  }
+  
+  .knop1:hover {
+    background-color: #EAD017;
+    color: white;
+  }
+
+  .arrow {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+  
+  .right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
